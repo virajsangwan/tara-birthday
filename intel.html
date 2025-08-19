@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy 5th Month Birthday Tara!</title>
+    <style>
+        body {
+            background: #ffe4ec;
+            color: #d63384;
+            font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ffb6d5;
+            color: #fff;
+            padding: 30px 0 10px 0;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 4px 20px #d6338440;
+        }
+        .container {
+            background: #fff0f6;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 0 20px #d6338440;
+            text-align: center;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            color: #ff69b4;
+            margin-top: 0.5em;
+        }
+        .tara-img {
+            margin: 30px 0;
+        }
+        .tara-img img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #ffb6d5;
+            background: #fff;
+            box-shadow: 0 0 20px #ffb6d580;
+            display: none;
+        }
+        .heart {
+            font-size: 2em;
+            color: #ff69b4;
+            margin: 0 5px;
+        }
+        .upload-label {
+            display: inline-block;
+            background: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        #photoInput {
+            display: none;
+        }
+        footer {
+            background: #ffb6d5;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1em;
+            margin-top: 40px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy 5th Month Birthday, Tara!</h1>
+        <p>Our cutest little princess</p>
+    </header>
+    <div class="container">
+        <label class="upload-label" for="photoInput">Choose Tara's Photo</label>
+        <input type="file" id="photoInput" accept="image/*">
+        <div class="tara-img">
+            <img id="taraPhoto" alt="Tara's Photo">
+        </div>
+        <h2>
+            <span class="heart">&#10084;&#65039;</span>
+            Tara, you are 5 months old today!
+            <span class="heart">&#10084;&#65039;</span>
+        </h2>
+        <p style="font-size:1.2em;">
+            You bring so much joy and happiness to our family.<br>
+            We love you so much, little angel!
+        </p>
+    </div>
+    <footer>
+        With love, your family &mdash; 2025
+    </footer>
+    <script>
+        const photoInput = document.getElementById('photoInput');
+        const taraPhoto = document.getElementById('taraPhoto');
+
+        photoInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    taraPhoto.src = e.target.result;
+                    taraPhoto.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
